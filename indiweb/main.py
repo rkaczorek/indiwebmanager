@@ -9,8 +9,8 @@ from threading import Timer
 import subprocess
 import platform
 from importlib_metadata import version
-
 from bottle import Bottle, run, template, static_file, request, response, BaseRequest, default_app
+from bottle_cors_plugin import cors_plugin
 from .indi_server import IndiServer, INDI_PORT, INDI_FIFO, INDI_CONFIG_DIR
 from .driver import DeviceDriver, DriverCollection, INDI_DATA_DIR
 from .database import Database
@@ -86,6 +86,7 @@ collection.parse_custom_drivers(db.get_custom_drivers())
 
 if args.server == 'standalone':
     app = Bottle()
+    app.install(cors_plugin('*')) # Enable CORS
     logging.info('using Bottle as standalone server')
 else:
     app = default_app()

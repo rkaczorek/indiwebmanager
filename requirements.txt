@@ -1,3 +1,4 @@
 requests
 psutil
 bottle
+bottle_cors_plugin
