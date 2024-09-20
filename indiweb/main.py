@@ -129,6 +129,7 @@ def get_favicon():
     """Serve favicon"""
     return static_file('favicon.ico', root=views_path)
 
+@app.route('/<:re:.*>', method='OPTIONS')
 
 @app.route('/')
 def main_form():
