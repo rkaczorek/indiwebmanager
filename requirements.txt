@@ -2,3 +2,4 @@ requests
 psutil
 bottle
 bottle-cors-plugin
+importlib_metadata
