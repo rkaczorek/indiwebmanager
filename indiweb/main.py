@@ -181,7 +181,7 @@ async def main_form(request: Request):
     Returns:
         str: The rendered HTML template.
     """
->>>>>>> origin/master
+
     global saved_profile
     drivers = collection.get_families()
 
