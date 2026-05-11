@@ -1,22 +1,16 @@
 [build-system]
-requires = ["hatchling"]
-build-backend = "hatchling.build"
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
 
-[tool.hatch.build.targets.wheel]
-packages = ["indiweb"]
+[tool.setuptools.packages.find]
+where = ["."]
 
-[tool.hatch.build.targets.sdist]
-include = [
-  "indiweb/**",
-  "README.md",
-  "LICENSE",
-  "AUTHORS",
-  "*.service",
-]
+[tool.setuptools.dynamic]
+version = { attr = "indiweb.__version__" }
 
 [project]
 name = "indiweb"
-version = "1.1.0"
+dynamic = ["version"]
 authors = [
   { name="Jasem Mutlaq", email="mutlaqja@ikarustech.com" },
   { name="Juan Menendez", email="juanmb@gmail.com" }

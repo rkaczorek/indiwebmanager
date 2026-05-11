@@ -1,0 +1,14 @@
+Source: indiweb
+Section: python
+Priority: optional
+Maintainer: Jasem Mutlaq <mutlaqja@ikarustech.com>
+Build-Depends: debhelper (>= 9), python3, dh-python, python3-setuptools, pybuild-plugin-pyproject
+Standards-Version: 4.5.1
+Homepage: https://github.com/knro/indiwebmanager
+
+Package: python3-indiweb
+Architecture: all
+Depends:
+ ${python3:Depends} , ${misc:Depends}
+Provides: ${python3:Provides}
+Description: eb Manager for INDI Server.
